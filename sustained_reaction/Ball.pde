@@ -105,13 +105,10 @@ class Ball {
           if (intersects(curIntersectionVal.y, curSegStart, curSegStop)){
             curDist = position.dist(curIntersectionVal);
             if (curDist < dist){
-              // then the y value of the velocity is reversed
+              // then the x value of the velocity is reversed
               newVelocity.y = velocity.y;
               newVelocity.x = -velocity.x;
               stepsToCollision = int(sqrt(pow(velocity.x, 2) + pow(velocity.y, 2)));
-              // normally, the ball would bounce a bit back off the wall, but this
-              // calculation is confusing (or at least I don't want to figure it
-              // out) so I'm just going to just set it to the intersection point.
               newPosition.x = curIntersectionVal.x;
               newPosition.y = curIntersectionVal.y;
             }
